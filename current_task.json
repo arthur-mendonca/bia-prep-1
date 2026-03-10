@@ -1,0 +1,103 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:388976124018:task-definition/task-def-bia:13",
+    "containerDefinitions": [
+        {
+            "name": "bia-container",
+            "image": "388976124018.dkr.ecr.us-east-1.amazonaws.com/bia:9213418",
+            "cpu": 0,
+            "memory": 524,
+            "memoryReservation": 262,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "name": "porta-80",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "DB_PWD",
+                    "value": "J73Fe3CfbivjskRzwX2X"
+                },
+                {
+                    "name": "DB_HOST",
+                    "value": "bia.cursmugyih4x.us-east-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "DB_PORT",
+                    "value": "5432"
+                },
+                {
+                    "name": "DB_USER",
+                    "value": "postgres"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/task-def-bia",
+                    "awslogs-create-group": "true",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "task-def-bia",
+    "executionRoleArn": "arn:aws:iam::388976124018:role/ecsTaskExecutionRole",
+    "networkMode": "bridge",
+    "revision": 13,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "256",
+    "memory": "524",
+    "registeredAt": "2026-03-09T22:00:53.640000-03:00",
+    "registeredBy": "arn:aws:iam::388976124018:user/fundamentos",
+    "enableFaultInjection": false
+}
